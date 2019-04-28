@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai9</title>
+</head>
+<style>
+    .nd {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="nd">
+    <p>Nhập vào số kWh</p>
+    <label for="kwh"></label><input type="number" id="kwh" style="background-color: orange"/>
+    <br><br>
+    <input type="button" value="Tính ngay" onclick="tinh();">
+    <br><br><br><br>
+    <p>Tiền điện của bạn là :</p>
+    <label for="kq"></label><textarea id="kq" cols="30" rows="1" style="background-color: wheat;text-align: center"></textarea>
+</div>
+<script>
+    function tinh() {
+        let a = parseInt(document.getElementById("kwh").value);
+        if (a > 0 && a <= 50) {
+            document.getElementById("kq").innerHTML = parseInt(a * 1678) + " VNĐ";
+        }
+        if (a > 50 && a <= 100) {
+            document.getElementById("kq").innerHTML = parseInt((50 * 1678) + ((a - 50) * 1734)) + " VNĐ";
+        }
+        if (a > 100 && a <= 200) {
+            document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + (a - 100) * 2014) + " VNĐ";
+        }
+        if (a > 200 && a <= 300) {
+            document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + (a - 200) * 2536) + " VNĐ";
+        }
+        if (a > 300 && a <= 400) {
+            document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + 200 * 2536 + (a - 300) * 2834) + " VNĐ";
+        }
+        if (a > 400) {
+            document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + 200 * 2536 + 300 * 2834 + (a - 400) * 2927) + " VNĐ";
+        }
+    }
+</script>
+</body>
+</html>

@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <title>bai7</title>
 </head>
+<style>
+    .nd {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+</style>
 <body>
-
+<div class="nd">
+    <p>Nhập vào số tuổi để kiểm tra</p>
+    <label for="st"></label><input type="text" id="st" style="background-color: orange;text-align: center"/>
+    <br><br>
+    <input type="button" value="Kiểm tra" onclick="check();">
+    <br><br><br>
+    <label for="kq"></label><textarea id="kq" style="background-color: wheat;text-align: center" cols="30" rows="3"></textarea>
+</div>
+<script>
+    function check() {
+        let a = parseInt(document.getElementById("st").value);
+        if (a<=120 && a>0) {
+            document.getElementById("kq").innerHTML = "Đây là số tuổi của 1 người!"
+        } else {
+            document.getElementById("kq").innerHTML = "Đây hoặc là yêu quái hoặc là chưa được sinh ra! =))"
+        }
+    }
+</script>
 </body>
 </html>

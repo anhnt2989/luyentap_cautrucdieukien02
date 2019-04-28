@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>bai8</title>
 </head>
+<style>
+    .nd {
+        text-align: center;
+    }
+
+</style>
 <body>
-$END$
+<div class="nd">
+    <p>Nhập vào giá trị cạnh a</p>
+    <label for="canha"></label><input type="text" style="background-color: orange" id="canha">
+    <br><br>
+    <p>Nhập vào giá trị cạnh b</p>
+    <label for="canhb"></label><input type="text" style="background-color: orange" id="canhb">
+    <br><br>
+    <p>Nhập vào giá trị cạnh c</p>
+    <label for="canhc"></label><input type="text" style="background-color: orange" id="canhc">
+    <br><br>
+    <input type="button" value="Kiểm tra" onclick="kt();">
+    <br><br><br>
+    <p>Kết quả :</p>
+    <label for="kq"></label><textarea id="kq" cols="30" rows="3" style="background-color: wheat"></textarea>
+</div>
+<script>
+    function kt() {
+        let a = parseFloat(document.getElementById("canha").value);
+        let b = parseFloat(document.getElementById("canhb").value);
+        let c = parseFloat(document.getElementById("canhc").value);
+        if (a > 0 && b > 0 && c > 0) {
+            if ((a + b) > c) {
+                if ((b + c) > a) {
+                    if ((a + c) > b) {
+                        document.getElementById("kq").innerHTML = "Đây là 3 cạnh của 1 tam giác!"
+                    }
+                }
+            } else {
+                document.getElementById("kq").innerHTML = "Đây không phải là 3 cạnh của 1 tam giác!"
+            }
+        }
+    }
+</script>
 </body>
 </html>
