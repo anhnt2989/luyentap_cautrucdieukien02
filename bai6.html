@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<style>
+    .nd {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+<body background="math-background-for-powerpoint-of-the-gallery-for-math-powerpoint-backgrounds-modest-math-background-for-powerpoint.jpg" style="background-size: cover">
+<p>Nhập vào lần lượt 3 giá trị a , b , c ta có phương trình bậc 2 với ẩn là x dạng :</p>
+<div class="nd">
+    <label for="a"></label><input type="text" id="a" style="background-color: orange;text-align: right"/>
+x**2 +
+    <label for="b"></label><input type="text" id="b" style="background-color: orange;text-align: right"/>
+x +
+    <label for="c"></label><input type="text" id="c" style="background-color: orange;text-align: left"/>
+ = 0
+    <br><br>
+    <input type="button" value="Giải phương trình" onclick="gpt();">
+    <br><br><br><br>
+    <p>Nghiệm :</p>
+    <label for="kq"></label><textarea id="kq" cols="30" rows="5" style="text-align: center;background-color: wheat"></textarea>
+</div>
+<script>
+    function gpt() {
+        let ax = parseFloat(document.getElementById('a').value);
+        let bx = parseFloat(document.getElementById('b').value);
+        let cx = parseFloat(document.getElementById('c').value);
+        let nx = parseFloat(bx * bx - (4 * ax * cx));
+        if (ax === 0) {
+            document.getElementById("kq").innerHTML = parseFloat((0 - cx) / bx);
+        } else if (ax === 0 && bx === 0) {
+            document.getElementById("kq").innerHTML = "Phương trình vô nghiệm"
+        } else {
+            if (nx < 0) {
+                document.getElementById("kq").innerHTML = "Phương trình vô nghiệm";
+            } else if (nx === 0) {
+                document.getElementById("kq").innerHTML = "Nghiệm kép x1 = x2 = " + "(-" + parseFloat(bx) + ")" + "/" + (2 * parseFloat(ax));
+            } else {
+                document.getElementById("kq").innerHTML = "x1 = " + "(-" + parseFloat(bx) + " + √" + parseFloat(nx) + ") / 2" + parseFloat(ax) + "      hoặc x2 = " + "(-" + parseFloat(bx) + " - √" + parseFloat(nx) + ") / 2" + parseFloat(ax)
+            }
+        }
+    }
+</script>
+</body>
+</html>

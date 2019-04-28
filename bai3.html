@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<style>
+    p {
+        text-align: center;
+    }
+    .canh {
+        text-align: center;
+    }
+    .kq {
+        text-align: center;
+    }
+    .bt {
+        text-align: center;
+    }
+</style>
+<body>
+<p>Nhập vào giá trị 1 cạnh (đơn vị tính)</p>
+<div class="canh">
+    <label for="canh"></label><input type="text" id="canh" style="background-color: orange">
+</div>
+<br>
+<div class="bt">
+    <input type="button" value="Tính" onclick="tinh();">
+</div>
+<p>Diện tích hình vuông là (đơn vị tính) :</p>
+<div class="kq">
+    <label for="kq"></label><textarea id="kq" cols="20" rows="2" style="background-color: orange;text-align: center"></textarea>
+</div>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("canh").value);
+        if (a>'0') {
+            document.getElementById('kq').innerHTML = parseFloat(a * a);
+        } else {
+            document.getElementById('kq').innerHTML = "Không xác định"
+        }
+    }
+</script>
+</body>
+</html>

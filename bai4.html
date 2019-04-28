@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<style>
+    p {
+        text-align: center;
+    }
+    .canha {
+        text-align: center;
+    }
+    .bt {
+        text-align: center;
+    }
+    .kq {
+        text-align: center;
+    }
+</style>
+<body>
+<p>Nhập vào giá trị của 2 cạnh kề (đơn vị)</p>
+<div class="canha">
+    <label for="canha"></label><input type="text" id="canha" style="background-color: orange;text-align: center"/>
+    &emsp;&emsp;
+    <label for="canhb"></label><input type="text" id="canhb" style="background-color: orange;text-align: center"/>
+</div>
+<br>
+<div class="bt">
+    <input type="button" value="Tính" onclick="tinh();">
+</div>
+<br><br><br>
+<p>Diện tích hình tam giác là (đơn vị)</p>
+<div class="kq">
+    <label for="kq"></label><textarea name="Diện tích hình vuông =" id="kq" cols="20" rows="2" style="background-color: orange;text-align: center"></textarea>
+</div>
+<!--Ngồi đơ cả mặt mất 2s em mới phát hiện ra đã thêm thẻ div rồi mà vẫn thêm style trong thẻ input, texarea... :)-->
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("canha").value);
+        let b = parseFloat(document.getElementById("canhb").value);
+        if (a>'0' && b>'0') {
+            document.getElementById('kq').innerHTML = parseFloat(a * b / 2);
+            //giải thích giúp em sao đoạn này nó lại báo có weak warning
+        } else {
+            document.getElementById('kq').innerHTML = "Không xác định";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<style>
+    p {
+        text-align: center;
+        color: snow;
+    }
+    .m {
+        text-align: center;
+    }
+    .nut {
+        text-align: center;
+    }
+    .ft {
+        text-align: center;
+    }
+</style>
+<body background="index.jpg" style="background-size: cover;background-repeat: no-repeat">
+<p>Nhập vào số m :</p>
+<div class="m">
+    <label for="meter"></label><input type="text" id="meter" style="background-color: orange">
+</div>
+<br>
+<div class="nut">
+    <input type="button" value="Convert" onclick="tinh();">
+</div>
+<br><br><br>
+<p>Số ft là :</p>
+<div class="ft">
+    <label for="kq"></label><textarea id="kq" cols="20" rows="2" style="background-color: orange;text-align: center"></textarea>
+</div>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById("meter").value);
+        document.getElementById('kq').innerHTML = parseFloat(a * 3.2808);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<style>
+    p {
+        text-align: center;
+    }
+    .pt {
+        text-align: center;
+    }
+    .bt {
+        text-align: center;
+    }
+    .kq {
+        text-align: center;
+    }
+
+</style>
+<body>
+<p>Nhập vào lần lượt 2 giá trị a,  và c ; phương trình với biến là x có dạng :</p>
+<div class="pt">
+    <label for="a"></label><input type="text" id="a" style="text-align: right"/>
+    .x +
+    <label for="b"></label><input type="text" id="b"/>
+     =
+    <label for="c"></label><input type="text" id="c"/>
+</div>
+<br><br>
+<div class="bt">
+<input type="button" value="Giải phương trình" onclick="gpt();"/>
+</div>
+<br><br><br>
+<div class="kq">
+<p>Nghiệm :</p>
+    <label for="kq"></label><textarea id="kq" cols="30" rows="2"></textarea>
+</div>
+<script>
+    function gpt() {
+        let ax = parseFloat(document.getElementById("a").value);
+        let bx = parseFloat(document.getElementById("b").value);
+        let cx = parseFloat(document.getElementById("c").value);
+        if (ax === 0) {
+            document.getElementById('kq').innerHTML = "Vô nghiệm ";
+        } else {
+                document.getElementById('kq').innerHTML = "x = " + parseFloat((cx-bx) / ax);
+        }
+    }
+</script>
+</body>
+</html>

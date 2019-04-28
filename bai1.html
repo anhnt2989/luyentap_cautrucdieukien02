@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<style>
+    .noidung {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+<body background="ws_Sunny_or_Rain_1920x1440.jpg" style="background-size: cover">
+<div class="noidung">
+<p>Nhập vào °C</p>
+<label for="celcius"></label><input type="text" id="celcius" style="background-color: orange;text-align: center">
+<br><br>
+<input type="button" value="Convert" onclick="tinh();">
+<br><br>
+<p>°F :</p>
+    <label for="kq"></label><textarea id="kq" cols="30" rows="2" style="text-align: center;background-color: orange"></textarea>
+</div>
+<script>
+    function tinh() {
+        let c = parseFloat(document.getElementById("celcius").value);
+        document.getElementById('kq').innerHTML = c * 9/5 + 32;
+    }
+</script>
+</body>
+</html>
