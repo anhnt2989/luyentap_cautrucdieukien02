@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công cụ tính lãi suất vay ngân hàng</title>
+</head>
+<style>
+    .nd {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="nd">
+    <p>Nhập vào số tiền vay</p>
+    <input type="number" id="tienvay" style="background-color: orange"/>
+    <br>
+    <p>Nhập vào thời gian vay (ngày)</p>
+    <input type="number" id="thoigian" style="background-color: orange"/>
+    <br>
+    <p>Nhập vào lãi suất hàng tháng (%)</p>
+    <input type="number" id="laisuat" style="background-color: orange"/>
+    <br><br>
+    <input type="button" value="Tính lãi" onclick="tinh();">
+    <br><br><br>
+    <p>Tổng số lãi bạn phải trả với khoản vay trên là :</p>
+    <textarea id="kq" cols="30" rows="3" style="background-color: orange;text-align: center"></textarea>
+</div>
+<script>
+    function tinh() {
+    let tvx = parseInt(document.getElementById("tienvay").value);
+    let tgx = parseInt(document.getElementById("thoigian").value);
+    let lsx = parseFloat(document.getElementById("laisuat").value) / 100;
+    document.getElementById("kq").innerHTML = parseInt((tvx*(lsx*12)*tgx) / 365);
+}
+</script>
+</body>
+</html>

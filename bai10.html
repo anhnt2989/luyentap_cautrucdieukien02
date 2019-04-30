@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai10</title>
+</head>
+<style>
+    .nd {
+        text-align: center;
+    }
+</style>
+<body>
+<div class="nd">
+<p>Tổng thu nhập :</p>
+    <input type="number" id="ttn"/>đ
+<br>Bao gồm những khoản sau đây :
+<p>Các khoản miễn thuế :</p>
+    <input type="number" id="kmt"/>đ
+<br>
+Bao gồm các khoản thu nhập : lương tăng ca, làm thêm giờ, làm ca đêm, thu nhập làm việc tại công ty cao hơn lương cơ bản...
+<br><br>
+<p>Các khoản giảm trừ :</p>
+    <input type="number" id="kgt"/>đ
+<br>
+Áp dụng với các trường hợp :
+<br>&emsp;&emsp;&emsp;&ensp;- Người nộp thuế >= 9.000.000đ/tháng (108.000.000đ/năm)
+<br>&emsp;&emsp;&ensp;- Người phụ thuộc: 3.600.000đ/tháng (43.200.000đ/năm)
+<br>- Các khoản đóng bảo hiểm, quỹ hưu trí tự nguyện
+<br>&emsp;&emsp;- Các khoản đóng góp từ thiện, nhân đạo, khuyến học...
+<br><br>
+<p>Các khoản không chịu thuế :</p>
+    <input type="number" id="kct"/>đ
+<br>
+Bao gồm :
+<br>&emsp;- Tiền ăn trưa, ăn giữa ca =< 730.000đ/tháng
+<br>&emsp;- Tiền phụ cấp trang phục =< 5.000.000đ/năm
+<br>&emsp;&emsp;&emsp;&emsp;- Phụ cấp điện thoại, xăng xe... (theo quy chế công ty)
+<br><br>
+    <input type="button" value="Tính thuế" onclick="tinh();"/>
+<br><br>
+    <textarea cols="30" rows="3" type="text" id="kq"></textarea>đ
+    <br>là số tiền thuế bạn phải nộp !
+</div>
+<script>
+    function tinh() {
+        let a = parseInt(document.getElementById("ttn").value);
+        let b = parseInt(document.getElementById("kmt").value);
+        let c = parseInt(document.getElementById("kgt").value);
+        let d = parseInt(document.getElementById("kct").value);
+        let tntt = parseInt(a - (b + c + d));
+        if (tntt > 0 && tntt <= 5000000) {
+            document.getElementById("kq").innerHTML = parseInt(tntt * 5 / 100);
+        } else if (tntt > 5000000 && tntt <= 10000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 10 / 100) - 250000);
+        } else if (tntt > 10000000 && tntt <= 18000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 15 / 100) - 750000);
+        } else if (tntt > 18000000 && tntt <= 32000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 20 / 100) - 1650000);
+        } else if (tntt > 32000000 && tntt <= 52000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 25 / 100) - 3250000);
+        } else if (tntt > 52000000 && tntt <= 80000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 30 / 100) - 5850000);
+        } else if (tntt > 80000000) {
+            document.getElementById("kq").innerHTML = parseInt((tntt * 35 / 100) - 9850000);
+        } else {
+            document.getElementById("kq").innerHTML = "Chúc mừng! Kho bạc không quen bạn!"
+        }
+    }
+</script>
+</body>
+</html>

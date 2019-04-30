@@ -24,21 +24,18 @@
         let a = parseInt(document.getElementById("kwh").value);
         if (a > 0 && a <= 50) {
             document.getElementById("kq").innerHTML = parseInt(a * 1678) + " VNĐ";
-        }
-        if (a > 50 && a <= 100) {
+        } else if (a > 50 && a <= 100) {
             document.getElementById("kq").innerHTML = parseInt((50 * 1678) + ((a - 50) * 1734)) + " VNĐ";
-        }
-        if (a > 100 && a <= 200) {
+        }else if (a > 100 && a <= 200) {
             document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + (a - 100) * 2014) + " VNĐ";
-        }
-        if (a > 200 && a <= 300) {
+        }else if (a > 200 && a <= 300) {
             document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + (a - 200) * 2536) + " VNĐ";
-        }
-        if (a > 300 && a <= 400) {
+        }else if (a > 300 && a <= 400) {
             document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + 200 * 2536 + (a - 300) * 2834) + " VNĐ";
-        }
-        if (a > 400) {
+        }else if (a > 400) {
             document.getElementById("kq").innerHTML = parseInt(50 * 1678 + 100 * 1734 + 200 * 2014 + 200 * 2536 + 300 * 2834 + (a - 400) * 2927) + " VNĐ";
+        } else {
+            document.getElementById("kq").innerHTML = "Có dùng đâu mà phải trả ?!?"
         }
     }
 </script>
